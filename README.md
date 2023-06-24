@@ -1,5 +1,5 @@
 # Movie Dashboard Project
-![Screenshot (250)](https://github.com/daaniissh/movie-dashbord/assets/102005928/7f7399c9-e166-41bd-8edc-2ef8cd762d29)
+![Screenshot (253)](https://github.com/daaniissh/movie-dashboard/assets/102005928/57415b82-7535-4caf-aee1-e6227b479c29)
 ![Screenshot (251)](https://github.com/daaniissh/movie-dashbord/assets/102005928/676f8898-c7ac-415b-a588-88dd16c8eea2)
 ![Screenshot (252)](https://github.com/daaniissh/movie-dashbord/assets/102005928/5c353ba2-bfd4-4b39-a98e-115515e22d6c)
 [Working video🚀](https://github.com/daaniissh/movie-dashbord/assets/102005928/7ddbea36-4d13-4522-9c4c-b1a78fd0f0b9)
