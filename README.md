@@ -2,7 +2,8 @@
 ![Screenshot (253)](https://github.com/daaniissh/movie-dashboard/assets/102005928/57415b82-7535-4caf-aee1-e6227b479c29)
 ![Screenshot (251)](https://github.com/daaniissh/movie-dashbord/assets/102005928/676f8898-c7ac-415b-a588-88dd16c8eea2)
 ![Screenshot (252)](https://github.com/daaniissh/movie-dashbord/assets/102005928/5c353ba2-bfd4-4b39-a98e-115515e22d6c)
-[Working video🚀](https://github.com/daaniissh/movie-dashbord/assets/102005928/7ddbea36-4d13-4522-9c4c-b1a78fd0f0b9)
+### Working video
+[video link🚀](https://github.com/daaniissh/movie-dashbord/assets/102005928/7ddbea36-4d13-4522-9c4c-b1a78fd0f0b9)
 
 ### Overview
 This project is a Movie Dashboard created using the MERN stack (MongoDB, Express.js, React.js, and Node.js). The dashboard consists of three main pages: Home Page, Add Genre Page, and Add Movie Page. The frontend is developed using React.js and Tailwind CSS with the DaisyUI plugin, while the backend is built with Node.js, Express.js, and Cors. Axios is used for making HTTP requests.
