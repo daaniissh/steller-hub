@@ -20,13 +20,13 @@ const Header = () => {
             <ul className="flex text-xl  font-bold space-x-4">
 
               <li className='w-5 h-5 animate-bounce cursor-pointer' >
-                <a href="#" className="text-white  "><img src="/instagram.png" alt="" /></a>
+                <a href="https://www.instagram.com/steller_hub/reels/" className="text-white  "><img src="/instagram.png" alt="" /></a>
               </li>
               <li className='w-5 h-5' >
-                <a href="#" className="text-white  cursor-pointer"><img src="/facebook.png" alt="" /></a>
+                <a href="https://www.facebook.com/profile.php?id=61551224851202" className="text-white  cursor-pointer"><img src="/facebook.png" alt="" /></a>
               </li>
               <li className='w-5 h-5' >
-                <a href="#" className="text-white  cursor-pointer"><img src="/gmail.png" alt="" /></a>
+                <a href="mailto: market54321678@gmail.com" className="text-white  cursor-pointer"><img src="/gmail.png" alt="" /></a>
               </li>
 
             </ul>      </AnimatePage>
