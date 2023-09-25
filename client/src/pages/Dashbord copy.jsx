@@ -10,7 +10,7 @@ const MovieDashboardC = () => {
   }, [])
   const [allMovies,setAllMovies] = useState([{}])
   const getAllMovies=async()=>{
-    const response = await axios.get("http://localhost:3005/api/movies/moviesWithGenre")
+    const response = await axios.get("https://steller-hub.onrender.com/api/movies/moviesWithGenre")
     setAllMovies(response.data)
   }
 

@@ -30,7 +30,7 @@ const MovieForm = () => {
   }, [])
 
   const getMoviesUpdate = async () => {
-    const response = await axios('http://localhost:3005/api/movies/movieById', {
+    const response = await axios('https://steller-hub.onrender.com/api/movies/movieById', {
       method: "POST",
       data: { id: params.id }
 
@@ -48,7 +48,7 @@ const MovieForm = () => {
   }
 
   const getAllGenre = async () => {
-    const response = await axios.get('http://localhost:3005/api/genres')
+    const response = await axios.get('https://steller-hub.onrender.com/api/genres')
     setGenres(response.data)
     
 
@@ -122,7 +122,7 @@ const MovieForm = () => {
 
         if (movieImageUrlCondition != "") {
           setLoading(true)
-          const response = await axios("http://localhost:3005/api/movies", {
+          const response = await axios("https://steller-hub.onrender.com/api/movies", {
             method: "POST",
             data: {
               imageName: movieImageUrlCondition,
@@ -153,7 +153,7 @@ const MovieForm = () => {
     try {
       if (movieId != 0) {
         setLoading(true)
-        const response = await axios('http://localhost:3005/api/movies/update', {
+        const response = await axios('https://steller-hub.onrender.com/api/movies/update', {
           method: "PUT",
           data: {
             id: movieId,
