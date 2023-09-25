@@ -33,20 +33,24 @@ router.get("/moviesWithGenre", async (req, res) => {
 
 // Update Movie with Genre
 router.put("/update", async (req, res) => {
-  console.log(req.body)
+  console.log(req.body);
   try {
     const movie = {
       imageName: req.body.image,
       title: req.body.title,
       ratings: req.body.ratings,
       genre: req.body.genre,
-      amazon:req.body.amazon,
-      flipkart:req.body.flipkart,
-      productsNum:req.body.productsNum
+      amazon: req.body.amazon,
+      flipkart: req.body.flipkart,
+      productsNum: req.body.productsNum,
     };
-    const movieList = await Movies.findByIdAndUpdate(req.body.id, {
-      ...movie,
-    });
+    const movieList = await Movies.findByIdAndUpdate(
+      req.body.id,
+      {
+        ...movie,
+      },
+      { rawResult: true }
+    );
     res.status(200).json(movieList);
   } catch (error) {
     res.status(400).json({
@@ -66,7 +70,7 @@ router.post("/movieById", async (req, res) => {
 // Create new Movie\
 
 router.post("/", async (req, res) => {
-console.log(req.body)
+  console.log(req.body);
   try {
     const isExist = await Movies.findOne({ title: req.body.title });
     if (!isExist) {
@@ -83,8 +87,8 @@ console.log(req.body)
     });
   }
 });
-router.delete('/',async(req,res)=>{
-  const deletedMovie = await Movies.findByIdAndDelete(req.body.id)
-    res.json(deletedMovie);
-})
+router.delete("/", async (req, res) => {
+  const deletedMovie = await Movies.findByIdAndDelete(req.body.id);
+  res.json(deletedMovie);
+});
 module.exports = router;
