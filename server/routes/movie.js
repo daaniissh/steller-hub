@@ -22,7 +22,7 @@ router.get("/moviesWithGenre", async (req, res) => {
       .where("genre")
       .ne([])
       .select("title ratings genre imageName amazon flipkart productsNum")
-      .populate("genre");
+      .populate("genre")
     res.status(200).json(usersList);
   } catch (error) {
     res.status(400).json({
@@ -48,8 +48,7 @@ router.put("/update", async (req, res) => {
       req.body.id,
       {
         ...movie,
-      },
-      { rawResult: true }
+      }
     );
     res.status(200).json(movieList);
   } catch (error) {
