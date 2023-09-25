@@ -10,6 +10,17 @@ const movieSchema = {
     maxLength: 255,
     required: true,
   },
+  amazon:{
+    type: String,
+    required: true,
+  },
+  flipkart:{
+    type: String,
+    required: true,
+  },
+  productsNum:{
+    type:String,
+  },
   ratings: {
     type: Number,
     min: 0,
@@ -22,5 +33,6 @@ const movieSchema = {
       ref: "Genre",
     },
   ],
+
 };
-module.exports = mongoose.model("Movies", movieSchema);
+module.exports = mongoose.model("Movie", movieSchema);

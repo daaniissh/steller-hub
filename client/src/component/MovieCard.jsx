@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
 
 // Import DaisyUI classes
@@ -10,43 +10,51 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Tooltip from './Tooltip';
 
-const MovieCard = ({ title, genre, rating, imageUrl, id ,setAllMovies,movieList}) => {
-  const handleDelete =async () => {
-     
-      const response = await axios("http://localhost:3005/api/movies", {
-        method: "DELETE",
-        data: { id }
-      })
+const MovieCard = ({ title, amazon,flipkart,productNum, imageUrl, id, setAllMovies, movieList }) => {
+  const [num, setNum] = useState()
+  const handleDelete = async () => {
 
-      const newList = movieList.filter((item) => item._id !== response.data._id)
-      setAllMovies(newList)
-    
+    const response = await axios("http://localhost:3005/api/movies", {
+      method: "DELETE",
+      data: { id }
+    })
+
+    const newList = movieList.filter((item) => item._id !== response.data._id)
+    setAllMovies(newList)
+
   }
 
+
+
+
+
+
   return (
-    <div className="flex ">
-      <img src={imageUrl} alt={title} className="  w-[140px] h-[300px] object-cover rounded-lg " />
+    <div className="flex justify-center">
 
-      <div className="bg-gray-100 flex flex-col justify-between  shadow-2xl rounded-md p-4">
+      <div className="bg-gray-50 border border-gray-100 flex flex-col justify-center items-center w-72  md:w-64  shadow-2xl rounded-lg p-4">
+        <img src={imageUrl} alt={title} className=" w-[200px]  h-[180px] object-contain  rounded-md " />
 
-        <h2 className="text-xl text-gray-800 font-bold mb-2 capitalize">{title}</h2>
-        <p className="text-gray-600 font-normal mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, incidunt.</p>
-        <div className="">
-          {genre?.map((item, index) => (
-            <div className="badge badge-accent badge-outline ml-1" key={item._id} >{item.title}</div>
-          ))}
-        </div>
+        <h2 className="text-lg text-gray-800  font-bold mt-2 capitalize">{title}</h2>
+        <p className="text-gray-400 text-[12px] font-normal text-center mb-2">#{productNum}</p>
+        <hr className='w-full text-gray-400' />
+        <p className='text-stone-300 font-medium text-[12px]' >Links ↓</p>
+        <div className="flex   w-full h-full justify-center mt-1  gap-5">
+          <div className="flex w-full items-center justify-center h-full">
+            <a href={amazon}>
+              <button className="text-[14px] hover:border-gray-400 duration-150 border capitalize items-center flex justify-center py-2 px-6 rounded-lg gap-1    font-semibold  bg-white text-[#232f3e] shadow-md">
+                <img width="10" height="10" src="https://www.pngmart.com/files/Amazon-Logo-PNG-Transparent.png" />
+                Amazon
+              </button>
+            </a>
 
-        <div className="flex items-center ml-1 mb-4 h-auto rating rating-sm">
-          <StartRating rating={rating} id={id} title={title} />
-          <p className="text-orange-600 mb-1 mt-1 ml-3 font-bold">{(rating / 25) + 1} Star</p>
-        </div>
-        <div className="flex items-end justify-end">
-          <Tooltip data={"Click and Edit"} > <Link to={`movieEdit/${id}`} className="btn btn-primary  mr-2"><AiFillEdit /></Link></Tooltip>
-            
-         
-         <Tooltip data={"Permenantaly delete!"} > <button onClick={handleDelete}  className="btn btn-primary "><AiFillDelete /></button></Tooltip>
-         
+          </div>
+          <div className="flex w-full items-center justify-center h-full">
+            <a href={flipkart} ><button className="text-[14px] border hover:border-blue-500 capitalize items-center flex justify-center py-2 px-6 rounded-lg gap-1 font-semibold bg-white duration-200 shadow-md text-[#047BD5]">
+              <img width="20" height="20" src="https://www.freepnglogos.com/uploads/flipkart-logo-png/flipkart-icon-23.png" alt="" />
+              flipkart
+            </button></a>
+          </div>
         </div>
       </div>
     </div>

@@ -12,6 +12,9 @@ const MovieForm = () => {
   // const [upImage, setUpImage] = useState()
   const [rating, setRating] = useState(0);
   const [movieId, setMovieId] = useState(0);
+  const [amazon, setAmazon] = useState("");
+  const [flipkart, setFlipkart] = useState("");
+  const [productNum, setProductNum] = useState("");
   const [genre, setGenre] = useState('');
   const [image, setImage] = useState("");
   const [cImage, setCImage] = useState("");
@@ -32,9 +35,12 @@ const MovieForm = () => {
       data: { id: params.id }
 
     })
-    const { ratings, genre, title, _id, imageName } = response?.data;
+    const { ratings, genre, title, _id, imageName ,amazon,flipkart,productsNum} = response?.data;
 
     setTitle(title)
+    setAmazon(amazon)
+    setFlipkart(flipkart)
+    setProductNum(productsNum)
     setMovieId(_id)
     setGenre(genre)
     setUImage(imageName)
@@ -54,6 +60,18 @@ const MovieForm = () => {
   const handleRatingChange = (event) => {
     
     setRating(event.target.value);
+  };
+  const handlePRnumChange = (event) => {
+    
+    setProductNum(event.target.value);
+  };
+  const handleAmazonChange = (event) => {
+    
+    setAmazon(event.target.value);
+  };
+  const handleFlipChange = (event) => {
+    
+    setFlipkart(event.target.value);
   };
 
   const handleGenreChange = (event) => {
@@ -109,6 +127,9 @@ const MovieForm = () => {
             data: {
               imageName: movieImageUrlCondition,
               title,
+              amazon,
+              flipkart,
+              productsNum:productNum,
               // id: movieId,
               ratings: rating,
               genre
@@ -137,6 +158,9 @@ const MovieForm = () => {
           data: {
             id: movieId,
             title,
+            amazon,
+            flipkart,
+            productsNum:productNum,
             ratings: rating,
             genre,
             imageName: uImage
@@ -186,6 +210,45 @@ const MovieForm = () => {
               className="w-full px-3 py-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
               value={title}
               onChange={handleTitleChange}
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="title" className="block text-gray-700 font-semibold mb-2">
+              productNum
+            </label>
+            <input
+              placeholder='Title'
+              type="text"
+              id="title"
+              className="w-full px-3 py-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+              value={productNum}
+              onChange={handlePRnumChange}
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="title" className="block text-gray-700 font-semibold mb-2">
+              Amazon
+            </label>
+            <input
+              placeholder='Title'
+              type="text"
+              id="title"
+              className="w-full px-3 py-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+              value={amazon}
+              onChange={handleAmazonChange}
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="title" className="block text-gray-700 font-semibold mb-2">
+              Flipkart
+            </label>
+            <input
+              placeholder='Title'
+              type="text"
+              id="title"
+              className="w-full px-3 py-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+              value={flipkart}
+              onChange={handleFlipChange}
             />
           </div>
 

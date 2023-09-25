@@ -21,7 +21,7 @@ router.get("/moviesWithGenre", async (req, res) => {
     const usersList = await Movies.find()
       .where("genre")
       .ne([])
-      .select("title ratings genre imageName")
+      .select("title ratings genre imageName amazon flipkart productsNum")
       .populate("genre");
     res.status(200).json(usersList);
   } catch (error) {
@@ -33,12 +33,16 @@ router.get("/moviesWithGenre", async (req, res) => {
 
 // Update Movie with Genre
 router.put("/update", async (req, res) => {
+  console.log(req.body)
   try {
     const movie = {
       imageName: req.body.image,
       title: req.body.title,
       ratings: req.body.ratings,
       genre: req.body.genre,
+      amazon:req.body.amazon,
+      flipkart:req.body.flipkart,
+      productsNum:req.body.productsNum
     };
     const movieList = await Movies.findByIdAndUpdate(req.body.id, {
       ...movie,
@@ -62,7 +66,7 @@ router.post("/movieById", async (req, res) => {
 // Create new Movie\
 
 router.post("/", async (req, res) => {
-
+console.log(req.body)
   try {
     const isExist = await Movies.findOne({ title: req.body.title });
     if (!isExist) {

@@ -1,0 +1,40 @@
+import React from 'react'
+import { AiFillInstagram, AiOutlineFacebook, AiOutlineInstagram, AiOutlineMail } from 'react-icons/ai'
+import AnimatePage from '../animation/Animation'
+const Header = () => {
+  return (
+    <header className="bg-white p-5 w-full  shadow-md">
+      <div className="container mx-auto">
+        <div className="flex items-center justify-between">
+
+          <AnimatePage initial={{ opacity: 0, x: 50 }} animate={{ opacity: 2, x: 0 }} exit={{ opacity: 0, x: -50 }} transition={{
+            ease: "easeIn",
+            duration: 1
+          }} >
+            <div style={{ fontFamily: "'Mochiy Pop One', sans-serif" }} className="text-black text-xl md:text-2xl font-semibold">STELLER HUB</div>
+          </AnimatePage>
+          <nav>  <AnimatePage initial={{ opacity: 0 ,x:-50}} animate={{ opacity: 2,x:0 }} exit={{ opacity: 0,x:50 }} transition={{
+            ease: "easeIn",
+            duration: 1
+          }} >
+            <ul className="flex text-xl  font-bold space-x-4">
+
+              <li className='w-5 h-5 animate-bounce cursor-pointer' >
+                <a href="#" className="text-white  "><img src="/instagram.png" alt="" /></a>
+              </li>
+              <li className='w-5 h-5' >
+                <a href="#" className="text-white  cursor-pointer"><img src="/facebook.png" alt="" /></a>
+              </li>
+              <li className='w-5 h-5' >
+                <a href="#" className="text-white  cursor-pointer"><img src="/gmail.png" alt="" /></a>
+              </li>
+
+            </ul>      </AnimatePage>
+          </nav>
+        </div>
+      </div>
+    </header>
+  )
+}
+
+export default Header

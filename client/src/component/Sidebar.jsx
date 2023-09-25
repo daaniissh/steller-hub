@@ -19,13 +19,13 @@ const Sidebar = () => {
      
       </div>
       <div className="my-4 duration-200 ease-in justify-center rounded-lg   flex w-10">
-      <Tooltip data="Add Movie" tooltip="tooltip tooltip-right" ><Link to="/movies" className="btn btn-primary btn-ghost btn-lg w-full p-2">
+      <Tooltip data="Add Movie" tooltip="tooltip tooltip-right" ><Link to="/movies/994672" className="btn btn-primary btn-ghost btn-lg w-full p-2">
           <MdOutlineLocalMovies/>
         </Link></Tooltip>
         
       </div>
       <div className="my-4 duration-200 ease-in justify-center rounded-lg   flex w-10">
-      <Tooltip data="Add Genre" tooltip="tooltip tooltip-right" >  <Link to="/genre" className="btn btn-primary btn-ghost btn-lg w-full p-2">
+      <Tooltip data="Add Genre" tooltip="tooltip tooltip-right" >  <Link to="/genre/994672" className="btn btn-primary btn-ghost btn-lg w-full p-2">
           <MdOutlineFeaturedPlayList/>
         </Link></Tooltip>
       
