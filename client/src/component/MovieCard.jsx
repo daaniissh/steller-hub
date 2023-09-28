@@ -30,7 +30,7 @@ const MovieCard = ({ title, amazon,flipkart,productNum, imageUrl, id, setAllMovi
 
 
   return (
-    <div className="flex justify-center">
+    <div data-aos="zoom-in" className="flex justify-center">
 
       <div className="bg-gray-50 border border-gray-100 flex flex-col justify-center items-center w-72  md:w-64  shadow-2xl rounded-lg p-4">
         <img src={imageUrl} alt={title} className=" w-[200px]  h-[180px] object-contain  rounded-md " />
@@ -43,14 +43,14 @@ const MovieCard = ({ title, amazon,flipkart,productNum, imageUrl, id, setAllMovi
           <div className="flex w-full items-center justify-center h-full">
             <a href={amazon}>
               <button className="text-[14px] hover:border-gray-400 duration-150 border capitalize items-center flex justify-center py-2 px-6 rounded-lg gap-1    font-semibold  bg-white text-[#232f3e] shadow-md">
-                <img width="10" height="10" src="https://www.pngmart.com/files/Amazon-Logo-PNG-Transparent.png" />
+                <img width="15" height="15" src="https://www.pngmart.com/files/Amazon-Logo-PNG-Transparent.png" />
                 Amazon
               </button>
             </a>
 
           </div>
           <div className="flex w-full items-center justify-center h-full">
-            <a href={flipkart} ><button className="text-[14px] border hover:border-blue-500 capitalize items-center flex justify-center py-2 px-6 rounded-lg gap-1 font-semibold bg-white duration-200 shadow-md text-[#047BD5]">
+            <a href={flipkart} ><button disabled={flipkart === "" ? true : false} className={flipkart === "" ?"contrast-50  text-[14px] border hover:border-blue-500 capitalize items-center flex justify-center py-2 px-6 rounded-lg gap-1 font-semibold bg-white duration-200 shadow-md text-[#047BD5]":"  text-[14px] border hover:border-blue-500 capitalize items-center flex justify-center py-2 px-6 rounded-lg gap-1 font-semibold bg-white duration-200 shadow-md text-[#047BD5]" }>
               <img width="20" height="20" src="https://www.freepnglogos.com/uploads/flipkart-logo-png/flipkart-icon-23.png" alt="" />
               flipkart
             </button></a>

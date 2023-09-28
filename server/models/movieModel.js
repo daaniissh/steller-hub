@@ -16,7 +16,6 @@ const movieSchema = {
   },
   flipkart:{
     type: String,
-    required: true,
   },
   productsNum:{
     type:String,

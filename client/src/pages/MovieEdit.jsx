@@ -20,6 +20,7 @@ const MovieForm = () => {
   const [cImage, setCImage] = useState("");
   const [uImage, setUImage] = useState("");
   const [loading, setLoading] = useState(false)
+
   const params = useParams()
   const navigation = useNavigate()
   useEffect(() => {
