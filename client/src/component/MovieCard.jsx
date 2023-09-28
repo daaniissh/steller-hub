@@ -2,11 +2,6 @@ import React, { useState } from 'react';
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
 
 // Import DaisyUI classes
-import 'daisyui/dist/full.css';
-import StarRating from './startRating';
-import MovieStars from './startRating';
-import StartRating from './startRating';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Tooltip from './Tooltip';
 
@@ -30,12 +25,13 @@ const MovieCard = ({ title, amazon,flipkart,productNum, imageUrl, id, setAllMovi
 
 
   return (
+  
     <div data-aos="zoom-in" className="flex justify-center">
 
       <div className="bg-gray-50 border border-gray-100 flex flex-col justify-center items-center w-72  md:w-64  shadow-2xl rounded-lg p-4">
-        <img src={imageUrl} alt={title} className=" w-[200px]  h-[180px] object-contain  rounded-md " />
+        <img src={imageUrl} alt={title} className=" w-[200px]  h-[170px] object-contain  rounded-md " />
 
-        <h2 className="text-lg text-gray-800  font-bold mt-2 capitalize">{title}</h2>
+        <h2 className="text-lg text-gray-800 text-center  font-bold mt-2 capitalize">{title}</h2>
         <p className="text-gray-400 text-[12px] font-normal text-center mb-2">#{productNum}</p>
         <hr className='w-full text-gray-400' />
         <p className='text-stone-300 font-medium text-[12px]' >Links ↓</p>
@@ -58,6 +54,7 @@ const MovieCard = ({ title, amazon,flipkart,productNum, imageUrl, id, setAllMovi
         </div>
       </div>
     </div>
+ 
   );
 };
 
