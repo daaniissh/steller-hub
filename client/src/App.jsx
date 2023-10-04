@@ -8,8 +8,8 @@ import GenreForm from './pages/GenreForm';
 import MovieCard from './component/MovieCard';
 import MovieDashboardC from './pages/Dashbord copy';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
+import 'aos/dist/aos.css'; 
+
 
 const App = () => {
   AOS.init();
@@ -17,9 +17,9 @@ const App = () => {
     
     <Routes>
       <Route exact path="/" element={<MovieDashboard />} />
-      <Route exact path="/admin/9946" element={<MovieDashboardC />} />
+      <Route exact path="/admin" element={<MovieDashboardC />} />
       <Route path="/movies/994672" element={<MovieForm />} />
-      <Route path="/admin/9946/movieEdit/:id" element={<MovieForm />} />
+      <Route path="/admin/movieEdit/:id" element={<MovieForm />} />
       <Route path="/genre/994672" element={<GenreForm />} />
       {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
