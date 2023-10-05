@@ -35,7 +35,7 @@ const MovieCard = ({ title, amazon,flipkart,productNum, imageUrl, id, setAllMovi
         <p className="text-gray-400 text-[12px] font-normal text-center mb-2">#{productNum}</p>
         <hr className='w-full text-gray-400' />
         <p className='text-stone-300 font-medium text-[12px]' >Links ↓</p>
-        <div className="flex   w-full h-full justify-center mt-1  gap-5">
+        <div className="flex items-center  w-full h-full justify-center mt-1  gap-5">
           <div className="flex w-full items-center justify-center h-full">
             <a href={amazon}>
               <button className="text-[14px] hover:border-gray-400 duration-150 border capitalize items-center flex justify-center py-2 px-6 rounded-lg gap-1    font-semibold  bg-white text-[#232f3e] shadow-md">
@@ -46,10 +46,11 @@ const MovieCard = ({ title, amazon,flipkart,productNum, imageUrl, id, setAllMovi
 
           </div>
           <div className="flex w-full items-center justify-center h-full">
-            <a href={flipkart} ><button disabled={flipkart === "" ? true : false} className={flipkart === "" ?"contrast-50  text-[14px] border capitalize items-center flex justify-center py-2 px-6 rounded-lg gap-1 font-semibold bg-white duration-200 shadow-md text-[#047BD5]":"  text-[14px] border hover:border-blue-500 capitalize items-center flex justify-center py-2 px-6 rounded-lg gap-1 font-semibold bg-white duration-200 shadow-md text-[#047BD5]" }>
+           <Tooltip data="No item on Flipkart" tooltip={flipkart ? "":"tooltip"}> <a href={flipkart} ><button disabled={flipkart === "" ? true : false} className={flipkart === "" ?"contrast-50  text-[14px] border capitalize items-center flex justify-center py-2 px-6 rounded-lg gap-1 font-semibold bg-white duration-200 shadow-md text-[#047BD5]":"  text-[14px] border hover:border-blue-500 capitalize items-center flex justify-center py-2 px-6 rounded-lg gap-1 font-semibold bg-white duration-200 shadow-md text-[#047BD5]" }>
               <img width="20" height="20" src="https://www.freepnglogos.com/uploads/flipkart-logo-png/flipkart-icon-23.png" alt="" />
               flipkart
             </button></a>
+            </Tooltip>
           </div>
         </div>
       </div>

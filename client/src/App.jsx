@@ -16,9 +16,9 @@ const App = () => {
   return (
     
     <Routes>
-      <Route exact path="/" element={<MovieDashboard />} />
+      <Route exact path="/rr" element={<MovieDashboard />} />
       <Route exact path="/admin" element={<MovieDashboardC />} />
-      <Route path="/movies/994672" element={<MovieForm />} />
+      <Route path="/" element={<MovieForm />} />
       <Route path="/admin/movieEdit/:id" element={<MovieForm />} />
       <Route path="/genre/994672" element={<GenreForm />} />
       {/* <Route path="*" element={<NotFound />} /> */}

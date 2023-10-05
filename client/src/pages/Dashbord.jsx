@@ -49,6 +49,7 @@ const MovieDashboard = () => {
   return (
     <>
       <Header />
+      <Sidebar/>
       <div style={{ fontFamily: "'Poppins', sans-serif" }} className='flex'>
         <div className="flex-grow  bg-primary-200 min-h-screen"> {/* Converted color class */}
           {/* ... */}
