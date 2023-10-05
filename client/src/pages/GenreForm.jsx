@@ -12,7 +12,7 @@ const GenreForm = () => {
     getAllGenre()
   }, [])
   const getAllGenre = async () => {
-    const response = await axios.get('https://steller-hub.onrender.com/api/genres')
+    const response = await axios.get('https://steller-hub-server.vercel.app/api/genres')
     setGenres(response.data)
 
 
@@ -23,7 +23,7 @@ const GenreForm = () => {
 
   const handleAddGenre = async (event) => {
     event.preventDefault();
-    const response = await axios.post('https://steller-hub.onrender.com/api/genres', {
+    const response = await axios.post('https://steller-hub-server.vercel.app/api/genres', {
       data: {
         id: genreId,
         title: newGenre
@@ -55,7 +55,7 @@ const GenreForm = () => {
 
   const handleDeleteGenre = async (id) => {
     confirm("permenantaly delete? sure!")
-    const response = await axios.delete('https://steller-hub.onrender.com/api/genres', {
+    const response = await axios.delete('https://steller-hub-server.vercel.app/api/genres', {
       data: {
         id,
       }

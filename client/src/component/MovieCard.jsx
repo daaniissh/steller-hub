@@ -9,7 +9,7 @@ const MovieCard = ({ title, amazon,flipkart,productNum, imageUrl, id, setAllMovi
   const [num, setNum] = useState()
   const handleDelete = async () => {
 
-    const response = await axios("https://steller-hub.onrender.com/api/movies", {
+    const response = await axios("https://steller-hub-server.vercel.app/api/movies", {
       method: "DELETE",
       data: { id }
     })

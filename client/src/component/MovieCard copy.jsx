@@ -13,7 +13,7 @@ import Tooltip from './Tooltip';
 const MovieCardC = ({ title, genre, rating, imageUrl, id ,setAllMovies,movieList}) => {
   const handleDelete =async () => {
      
-      const response = await axios("https://steller-hub.onrender.com/api/movies", {
+      const response = await axios("https://steller-hub-server.vercel.app/api/movies", {
         method: "DELETE",
         data: { id }
       })

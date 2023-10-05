@@ -18,7 +18,7 @@ const MovieDashboard = () => {
   }, [])
   const getAllMovies = async () => {
     try {
-      const response = await axios.get("https://steller-hub.onrender.com/api/movies/moviesWithGenre")
+      const response = await axios.get("https://steller-hub-server.vercel.app/api/movies/moviesWithGenre")
       setSpin(true)
       const reversedArr = [];
       for (let i = response.data.length - 1; i >= 0; i--) {
@@ -49,7 +49,6 @@ const MovieDashboard = () => {
   return (
     <>
       <Header />
-      <Sidebar/>
       <div style={{ fontFamily: "'Poppins', sans-serif" }} className='flex'>
         <div className="flex-grow  bg-primary-200 min-h-screen"> {/* Converted color class */}
           {/* ... */}
