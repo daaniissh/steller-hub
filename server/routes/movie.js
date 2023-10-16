@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
 });
 
 // Get All Movies with Genre
-router.get("/moviesWithGenre", async (req, res) => {
+router.get("/products", async (req, res) => {
   try {
     const usersList = await Movies.find()
       .where("genre")
