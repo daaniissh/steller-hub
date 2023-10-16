@@ -10,7 +10,7 @@ const MovieDashboardC = () => {
   }, [])
   const [allMovies,setAllMovies] = useState([{}])
   const getAllMovies=async()=>{
-    const response = await axios.get("https://steller-hub-server.vercel.app/api/movies/moviesWithGenre")
+    const response = await axios.get("https://steller-hub-server.vercel.app/api/movies/products")
     setAllMovies(response.data)
   }
 
