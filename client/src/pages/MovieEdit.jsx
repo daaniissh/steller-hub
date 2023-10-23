@@ -12,7 +12,9 @@ const MovieForm = () => {
   // const [upImage, setUpImage] = useState()
   const [rating, setRating] = useState(0);
   const [movieId, setMovieId] = useState(0);
-  const [amazon, setAmazon] = useState("");
+  const [amazon, SetINamazon] = useState("");
+  const [USAamazon, SetUSAamazon] = useState("");
+  const [BZamazon, SetBZamazon] = useState("");
   const [flipkart, setFlipkart] = useState("");
   const [productNum, setProductNum] = useState("");
   const [genre, setGenre] = useState('');
@@ -36,10 +38,12 @@ const MovieForm = () => {
       data: { id: params.id }
 
     })
-    const { ratings, genre, title, _id, imageName ,amazon,flipkart,productsNum} = response?.data;
+    const { ratings, genre, title, _id,USAamazon,BZamazon, imageName ,amazon,flipkart,productsNum} = response?.data;
 
     setTitle(title)
-    setAmazon(amazon)
+    SetINamazon(amazon)
+    SetUSAamazon(USAamazon)
+    SetBZamazon(BZamazon)
     setFlipkart(flipkart)
     setProductNum(productsNum)
     setMovieId(_id)
@@ -66,9 +70,17 @@ const MovieForm = () => {
     
     setProductNum(event.target.value);
   };
-  const handleAmazonChange = (event) => {
+  const handleIamazonChange = (event) => {
     
-    setAmazon(event.target.value);
+    SetINamazon(event.target.value);
+  };
+  const handleBZAmazonChange = (event) => {
+    
+    SetBZamazon(event.target.value);
+  };
+  const handleUSAAmazonChange = (event) => {
+    
+    SetUSAamazon(event.target.value);
   };
   const handleFlipChange = (event) => {
     
@@ -160,6 +172,8 @@ const MovieForm = () => {
             id: movieId,
             title,
             amazon,
+            USAamazon,
+            BZamazon,
             flipkart,
             productsNum:productNum,
             ratings: rating,
@@ -228,7 +242,7 @@ const MovieForm = () => {
           </div>
           <div className="mb-4">
             <label htmlFor="title" className="block text-gray-700 font-semibold mb-2">
-              Amazon
+              Amazon(India)
             </label>
             <input
               placeholder='Title'
@@ -236,12 +250,38 @@ const MovieForm = () => {
               id="title"
               className="w-full px-3 py-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
               value={amazon}
-              onChange={handleAmazonChange}
+              onChange={handleIamazonChange}
             />
           </div>
           <div className="mb-4">
             <label htmlFor="title" className="block text-gray-700 font-semibold mb-2">
-              Flipkart
+              Amazon(USA)
+            </label>
+            <input
+              placeholder='Title'
+              type="text"
+              id="title"
+              className="w-full px-3 py-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+              value={USAamazon}
+              onChange={handleUSAAmazonChange}
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="title" className="block text-gray-700 font-semibold mb-2">
+              Amazon(Brazil)
+            </label>
+            <input
+              placeholder='Title'
+              type="text"
+              id="title"
+              className="w-full px-3 py-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+              value={BZamazon}
+              onChange={handleBZAmazonChange}
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="title" className="block text-gray-700 font-semibold mb-2">
+              Flipkart(India)
             </label>
             <input
               placeholder='Title'

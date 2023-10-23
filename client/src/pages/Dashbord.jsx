@@ -4,11 +4,14 @@ import Sidebar from '../component/Sidebar';
 import axios from 'axios';
 import Header from '../component/header';
 import AnimatePage from '../animation/Animation'
+import CustomSelect from '../component/Dropdown';
+import Dropdown from '../component/Dropdown';
 const MovieDashboard = () => {
 
   const [allMovies, setAllMovies] = useState([{}])
   const [FlMovies, setFlMovies] = useState([{}])
   const [data, setData] = useState()
+  const [country,setCountry] = useState("")
   const [spin, setSpin] = useState(false)
   const [search, setSearch] = useState("")
   useEffect(() => {
@@ -44,16 +47,42 @@ const MovieDashboard = () => {
     console.log(allMovies, e.target.value.length);
 
   }
+  useEffect(() => {
+    getCountryName();
+  }, []);
+  
+  const getCountryName = async () => {
+    fetch('https://api.geoapify.com/v1/ipinfo?apiKey=0d6c29af0b7d424f86636d38e5709382')
+    .then(response => response.json())
+    .then(data => {
+      // You can now access the location data in the "data" object
+      
+          setCountry(data.country.name)
+      
+    
+      console.log(data.country.name);
+    })
+  };
+  
+  
+const NOT_FOUND = country !== "India" && country !== "United States" && country !== "Brazil" ? "Not found" : country
+
 
 
   return (
     <>
-      <Header />
+    <Header country={country} />
       <div style={{ fontFamily: "'Poppins', sans-serif" }} className='flex'>
         <div className="flex-grow  bg-primary-200 min-h-screen"> {/* Converted color class */}
           {/* ... */}
           <main className="container mx-auto px-4 py-8">
-
+          
+            {/* <CustomSelect
+              value={val}
+              onChange={setVal}
+              options={countries}
+              placeholder="Choose an option..."
+            /> */}
             <AnimatePage initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 2, scale: 1 }} exit={{ opacity: 0, scale: 0 }} transition={{
               ease: "ease",
               duration: 0.9
@@ -82,9 +111,10 @@ const MovieDashboard = () => {
               <p className='font-medium text-sm text-stone-400 mt-2 ' >Products are loading... </p>
 
             </div> :
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"}>
                 {data?.map((item, index) => (
                   <MovieCard
+                  country={country}
                     key={index}
                     setAllMovies={setAllMovies}
                     movieList={allMovies}
@@ -92,6 +122,8 @@ const MovieDashboard = () => {
                     imageUrl={item.imageName}
                     title={item.title}
                     amazon={item.amazon}
+                    USAamazon={item.USAamazon}
+                    BZamazon={item.BZamazon}
                     flipkart={item.flipkart}
                     productNum={item.productsNum}
                     genre={item.genre}
@@ -103,7 +135,7 @@ const MovieDashboard = () => {
           </main>
           {/* ... */}
         </div>
-      </div>
+      </div> 
     </>
   );
 };

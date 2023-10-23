@@ -12,7 +12,15 @@ const movieSchema = {
   },
   amazon:{
     type: String,
-    required: true,
+    
+  },
+  USAamazon:{
+    type: String,
+    
+  },
+  BZamazon:{
+    type: String,
+    
   },
   flipkart:{
     type: String,

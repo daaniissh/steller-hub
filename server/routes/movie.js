@@ -21,7 +21,7 @@ router.get("/products", async (req, res) => {
     const usersList = await Movies.find()
       .where("genre")
       .ne([])
-      .select("title ratings genre imageName amazon flipkart productsNum")
+      .select("title ratings genre imageName amazon USAamazon BZamazon flipkart productsNum")
       .populate("genre")
     res.status(200).json(usersList);
   } catch (error) {
@@ -41,6 +41,8 @@ router.put("/update", async (req, res) => {
       ratings: req.body.ratings,
       genre: req.body.genre,
       amazon: req.body.amazon,
+      USAamazon:req.body.USAamazon,
+      BZamazon:req.body.BZamazon,
       flipkart: req.body.flipkart,
       productsNum: req.body.productsNum,
     };
