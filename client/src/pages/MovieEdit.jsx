@@ -141,6 +141,8 @@ const MovieForm = () => {
               imageName: movieImageUrlCondition,
               title,
               amazon,
+              USAamazon,
+              BZamazon,
               flipkart,
               productsNum:productNum,
               // id: movieId,
