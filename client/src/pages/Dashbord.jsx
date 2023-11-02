@@ -29,6 +29,10 @@ const MovieDashboard = () => {
         // Call your function here
         navigate("/admin")
       }
+      if (event.key === 'E' && event.shiftKey) {
+        // Call your function here
+        navigate("/fff")
+      }
     };
 
     // Add event listener when the component mounts
@@ -40,9 +44,7 @@ const MovieDashboard = () => {
     };
   }, []); // Empty dependency array ensures the effect runs only once when the component mounts
 
-  const yourFunction = () => {
-    console.log('Ctrl + A + D pressed!');
-  };
+ 
 
   const getAllMovies = async () => {
     try {
