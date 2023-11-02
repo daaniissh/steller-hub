@@ -22,12 +22,13 @@ const MovieCard = ({country,USAamazon,BZamazon, title, amazon,flipkart,productNu
 
 
 
+const ct = country === "United States" && !USAamazon || country === "India" && !amazon || country === "Brazil" && !BZamazon 
 
 
 
   return (
   
-    <div data-aos="zoom-in" className={ country === "Unites States" && USAamazon === ""  ? "hidden" :"flex justify-center"}>
+    <div data-aos="zoom-in" className={ct ? "hidden w-full":"flex justify-center"}>
 
       <div className="bg-gray-50 border border-gray-100 flex flex-col justify-center items-center w-72  md:w-64  shadow-2xl rounded-lg p-4">
         <img src={imageUrl} alt={title} className=" w-[200px]  h-[170px] object-contain  rounded-md " />

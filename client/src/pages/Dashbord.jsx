@@ -13,6 +13,7 @@ const MovieDashboard = () => {
   const [data, setData] = useState()
   const [country,setCountry] = useState("")
   const [spin, setSpin] = useState(false)
+  const [ct, setCt] = useState(false)
   const [search, setSearch] = useState("")
   useEffect(() => {
     setSpin(true)
@@ -49,6 +50,7 @@ const MovieDashboard = () => {
   }
   useEffect(() => {
     getCountryName();
+    setSpin(NOT_FOUND === "Not found" ? true : false)
   }, []);
   
   const getCountryName = async () => {
@@ -56,7 +58,7 @@ const MovieDashboard = () => {
     .then(response => response.json())
     .then(data => {
       // You can now access the location data in the "data" object
-      
+setCt(true)
           setCountry(data.country.name)
       
     
@@ -71,8 +73,12 @@ const NOT_FOUND = country !== "India" && country !== "United States" && country 
 
   return (
     <>
-    <Header country={country} />
-      <div style={{ fontFamily: "'Poppins', sans-serif" }} className='flex'>
+    <Header country={country} not={NOT_FOUND} ct={ct}/>
+     {country !== "India" && country !== "United States" && country !== "Brazil" && ct ?  <div className='flex w-full h-[70vh] justify-center items-center flex-col select-none'>
+                  
+                    <img src="not.png" alt="" /> 
+                     <h2 className='font-mono font-extrabold'> Sorry this website not available in your country</h2>
+      </div> : <div style={{ fontFamily: "'Poppins', sans-serif" }} className={NOT_FOUND === "Not found" ? 'hidden':"flex"}>
         <div className="flex-grow  bg-primary-200 min-h-screen"> {/* Converted color class */}
           {/* ... */}
           <main className="container mx-auto px-4 py-8">
@@ -111,7 +117,7 @@ const NOT_FOUND = country !== "India" && country !== "United States" && country 
               <p className='font-medium text-sm text-stone-400 mt-2 ' >Products are loading... </p>
 
             </div> :
-              <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"}>
+              <div className={"w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"}>
                 {data?.map((item, index) => (
                   <MovieCard
                   country={country}
@@ -135,7 +141,7 @@ const NOT_FOUND = country !== "India" && country !== "United States" && country 
           </main>
           {/* ... */}
         </div>
-      </div> 
+      </div>  }
     </>
   );
 };
