@@ -5,6 +5,7 @@ import axios from 'axios';
 import Header from '../component/header';
 import AnimatePage from '../animation/Animation'
 import CustomSelect from '../component/Dropdown';
+import {useNavigate} from 'react-router-dom'
 import Dropdown from '../component/Dropdown';
 const MovieDashboard = () => {
 
@@ -20,6 +21,29 @@ const MovieDashboard = () => {
     getAllMovies()
 
   }, [])
+  const navigate = useNavigate()
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      
+      if (event.key === 'I' && event.shiftKey) {
+        // Call your function here
+        navigate("/admin")
+      }
+    };
+
+    // Add event listener when the component mounts
+    document.addEventListener('keydown', handleKeyPress);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []); // Empty dependency array ensures the effect runs only once when the component mounts
+
+  const yourFunction = () => {
+    console.log('Ctrl + A + D pressed!');
+  };
+
   const getAllMovies = async () => {
     try {
       const response = await axios.get("https://steller-hub-server.vercel.app/api/movies/products")
@@ -66,6 +90,7 @@ setCt(true)
     })
   };
   
+ 
   
 const NOT_FOUND = country !== "India" && country !== "United States" && country !== "Brazil" ? "Not found" : country
 
