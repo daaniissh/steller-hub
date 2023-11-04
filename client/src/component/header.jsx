@@ -11,7 +11,7 @@ const Header = ({country,not,ct,spin}) => {
             ease: "easeIn",
             duration: 1
           }} >
-            <div style={{ fontFamily: "'Mochiy Pop One', sans-serif" }} className="text-black select-none text-center text-lg md:text-2xl font-semibold flex justify-center items-center"><img src="logo.png" width="20" alt="" /> teller hub</div>
+            <div style={{ fontFamily: "'Mochiy Pop One', sans-serif" }} className="text-black select-none text-center text-lg md:text-2xl font-[600] flex justify-center items-center"><span className='s ml-[1px] text-3xl md:text-4xl' >S</span> teller hub</div>
           </AnimatePage>
           <nav>  <AnimatePage initial={{ opacity: 0 ,x:-50}} animate={{ opacity: 2,x:0 }} exit={{ opacity: 0,x:50 }} transition={{
             ease: "easeIn",
