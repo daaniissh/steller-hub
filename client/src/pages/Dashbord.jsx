@@ -92,16 +92,16 @@ setCt(true)
     })
   };
   
- 
+ const available = country !== "India" && country !== "United States" && country !== "Brazil" && country !== "Canada" && country !== "Netherlands" && country !== "United Kingdom	" && country !== "Poland" && country !== "France" && country !== "Germany" && country !== "Spain" && country !== "Italy" && country !== "Sweden" 
   
-const NOT_FOUND = country !== "India" && country !== "United States" && country !== "Brazil" ? "Not found" : country
+const NOT_FOUND = country !== "India" && country !== "United States" && country !== "Brazil" && country !== "Canada" && country !== "Netherlands" && country !== "United Kingdom	" && country !== "Poland" && country !== "France" && country !== "Germany" && country !== "Spain" && country !== "Italy" && country !== "Sweden" ? "Not found" : country
 
 
 
   return (
     <>
-    <Header country={country} not={NOT_FOUND} ct={ct}/>
-     {country !== "India" && country !== "United States" && country !== "Brazil" && ct ?  <div className='flex w-full h-[70vh] justify-center items-center flex-col select-none'>
+    <Header spin={spin} country={country} not={NOT_FOUND} ct={ct}/>
+     {available && ct ?  <div className='flex w-full h-[70vh] justify-center items-center flex-col select-none'>
                   
                     <img src="not.png" alt="" /> 
                      <h2 className='font-mono font-extrabold'> Sorry this website not available in your country</h2>
@@ -144,7 +144,7 @@ const NOT_FOUND = country !== "India" && country !== "United States" && country 
               <p className='font-medium text-sm text-stone-400 mt-2 ' >Products are loading... </p>
 
             </div> :
-              <div className={"w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"}>
+              <div className={"w-full grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 2xl:grid-cols-4 gap-4"}>
                 {data?.map((item, index) => (
                   <MovieCard
                   country={country}
