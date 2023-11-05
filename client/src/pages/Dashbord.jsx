@@ -92,9 +92,9 @@ setCt(true)
     })
   };
   
- const available = country !== "India" && country !== "United States" && country !== "Brazil" && country !== "Canada" && country !== "Netherlands" && country !== "United Kingdom	" && country !== "Poland" && country !== "France" && country !== "Germany" && country !== "Spain" && country !== "Italy" && country !== "Sweden" 
+ const available = country !== "India" && country !== "United States" && country !== "Brazil" && country !== "Canada" && country !== "Netherlands" && country !== "United Kingdom" && country !== "Poland" && country !== "France" && country !== "Germany" && country !== "Spain" && country !== "Italy" && country !== "Sweden" 
   
-const NOT_FOUND = country !== "India" && country !== "United States" && country !== "Brazil" && country !== "Canada" && country !== "Netherlands" && country !== "United Kingdom	" && country !== "Poland" && country !== "France" && country !== "Germany" && country !== "Spain" && country !== "Italy" && country !== "Sweden" ? "Not found" : country
+const NOT_FOUND = country !== "India" && country !== "United States" && country !== "Brazil" && country !== "Canada" && country !== "Netherlands" && country !== "United Kingdom" && country !== "Poland" && country !== "France" && country !== "Germany" && country !== "Spain" && country !== "Italy" && country !== "Sweden" ? "Not found" : country
 
 
 
